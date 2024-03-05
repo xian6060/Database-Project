@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block content %}
+<form method="post" class="buttons">
+  <h3>派愛工五</h3>
+  <div>
+    <label>您的暱稱:</label>
+    <input
+      type="text"
+      placeholder="親，記得輸入暱稱，麼麼哒"
+      name="name"
+      value="{{name}}"
+    />
+  </div>
+  <div class="join">
+    <input type="text" placeholder="房號" name="code" value="{{code}}" />
+    <button type="submit" name="join">加入群聊</button>
+  </div>
+  <button type="submit" name="create" class="create-btn">建立房間</button>
+  <button type="submit" name="chatbot" class="create-btn">無人區</button>
+   <button type="submit" name="sponsor" class="create-btn">派愛premium</button>
+  {% if error %}
+  <ul>
+    <li>{{error}}</li>
+  </ul>
+  {% endif %}
+</form>
+{% endblock %}
